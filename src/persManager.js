@@ -37,10 +37,25 @@ export function deletePerson (id) {
     }
 }
 
-export function updatePersonName (id, firstName, lastName) {
+export function getPersonById (id) {
+    let person;
+    if (persons){
+        for (const pers of persons){
+            if (pers.id === id){
+                person = pers;
+                break;
+            }
+        }
+    }
 
+    return person;
 }
 
-export function updatePersonAge (id, age) {
-
+export function updatePerson (id, firstName, lastName, age) {
+    const pers = getPersonById(id);
+    if(pers){
+        pers.first = firstName;
+        pers.last = lastName;
+        pers.age = age;
+    }
 }

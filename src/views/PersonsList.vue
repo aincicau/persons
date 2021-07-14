@@ -5,7 +5,8 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Age</th>
-      <th colspan="2">Action</th>
+      <th>Edit</th>
+      <th>Delete</th>
     </tr>
   </thead>
   <tbody>
@@ -14,7 +15,7 @@
       <td>{{ pers.last }}</td>
       <td>{{ pers.age }}</td>
       <td>
-        <router-link to="/edit">Edit</router-link>
+        <router-link :to="'/edit/' + pers.id">Edit</router-link>
       </td>
       <td>
         <button type="button" @click="deleteP(pers.id)">Delete</button>
@@ -44,3 +45,13 @@ export default {
   }
 }
 </script>
+
+<style>
+table {
+  width: 100%;
+}
+
+th, td {
+  border-bottom: 1px solid #ddd;
+}
+</style>

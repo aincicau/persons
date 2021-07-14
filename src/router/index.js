@@ -21,9 +21,10 @@ const routes = [
     component: PersonsList
   },
   {
-    path: '/edit',
+    path: '/edit/:id',
     name: 'EditPerson',
-    component: EditPerson
+    component: EditPerson,
+    props: true
   }
 ]
 
